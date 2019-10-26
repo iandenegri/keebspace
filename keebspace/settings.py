@@ -28,7 +28,9 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
+###################################################
+### APPS
+###################################################
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -55,7 +57,7 @@ ROOT_URLCONF = 'keebspace.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -71,8 +73,10 @@ TEMPLATES = [
 WSGI_APPLICATION = 'keebspace.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+###################################################
+### Database
+###################################################
+# # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -81,6 +85,9 @@ DATABASES = {
     }
 }
 
+###################################################
+### AUTH
+###################################################
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -102,6 +109,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTH_USER_MODEL='users.CustomUser'
 
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
+
+###################################################
+### Internationalization
+###################################################
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
@@ -115,6 +129,9 @@ USE_L10N = True
 
 USE_TZ = True
 
+###################################################
+### MEDIA
+###################################################
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/

@@ -1,6 +1,6 @@
 # Key Features:
 1. User Profiles
-    * A profile must have a username and email address
+    * ~~A profile must have a username and email address~~
     * Users can have a Profile Picture
     * Users can follow each other (many to many)
     * Users can add builds to their **build collection** (Many builds to one user)

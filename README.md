@@ -34,6 +34,7 @@
     * Featured Build(s)
     * Latest Build(s)
     * Bulletin Board posts from mutuals or friends.
+    * List all user notifications
 
 # Wire Frames
 * To do

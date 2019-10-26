@@ -11,8 +11,8 @@
     * Users can be **verified** as content creator or vendors.
     * A **status** for each user.
 1. Builds
-    * Builds need a **title**
-    * Builds can have a **description**
+    * ~~Builds need a **title**~~
+    * ~~Builds can have a **description**~~
     * Builds can have **pictures**
     * Builds can be made up of **parts**
     * Builds can be *liked* by other users
@@ -20,6 +20,8 @@
     * Users can comment each other's posts.
     * A build can be **featured**
     * A build can have **predefined tags**
+    * Drafts and published statuses for builds.
+    * A build will have a **published date and time** that auto-populates when a build has its status set to published or when status is changed from draft to published.
 1. List Of Individual Parts ***LOW PRIORITY***
     * Users can *search* for parts by **type**
     * Parts will be PCB, caps, switches, stabilizers, case, prebuilts.

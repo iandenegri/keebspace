@@ -5,7 +5,6 @@ from .models import Build
 
 # Create your views here.
 
-
 class HomeTemplateView(TemplateView):
     
     template_name = 'index.html'

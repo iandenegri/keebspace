@@ -1,15 +1,16 @@
 # Key Features:
 1. User Profiles
     * ~~A profile must have a username and email address~~
-    * Users can have a Profile Picture
+    * ~~Users can have a Profile Picture~~
     * Users can follow each other (many to many)
-    * Users can add builds to their **build collection** (Many builds to one user)
-    * Users can decorate their profile with their album of pictures of descriptions. (This is.. very front end heavy but would be nice for users if it could be done...)
+    * ~~Users can add builds to their **build collection** (Many builds to one user)~~
+    * ~~Users can decorate their profile with their album of pictures of descriptions. (This is.. very front end heavy but would be nice for users if it could be done...)~~ I don't know what this means anymore, lol.
     * There can be admins
     * Users can block each other to prevent comments on their builds.
     * Users can have a **collection of parts** that can come up as defaults when they start to put together a new build in the create build page. When adding a part, a user may define how much they spent on the part. This will be added later on as a post release feature. (many to many)
     * Users can be **verified** as content creator or vendors.
-    * A **status** for each user.
+    * ~~A **status** for each user.~~
+    * ~~An **about/bio** for each user.~~
 1. Builds
     * ~~Builds need a **title**~~
     * ~~Builds can have a **description**~~

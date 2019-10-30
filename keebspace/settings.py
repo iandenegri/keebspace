@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from environs import Env
+
+env = Env()
+env.read_env()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,12 +24,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'tx1-@t_-vk7m=-2+4tt9&1tihn_$+1(t))d)38k*1cf^kf9xfg'
+SECRET_KEY = os.environ.get('SECRET_KEY') if os.environ.get('SECRET_KEY') else 'TH1SNEED5T0BEREPLAC3D'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG") if os.environ.get("DEBUG") else True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', 'keebspace.com']
 
 
 ###################################################
@@ -39,8 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # My apps
     'users.apps.UsersConfig',
     'keebs.apps.KeebsConfig',
+    #third party
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -138,3 +145,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media") 
+MEDIA_URL = "/media/"
+
+###################################################
+### Deployment
+###################################################
+
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID') if os.environ.get('AWS_ACCESS_KEY_ID') else False
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY') if os.environ.get('AWS_SECRET_ACCESS_KEY') else False
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME') if os.environ.get('AWS_STORAGE_BUCKET_NAME') else False
+
+AWS_S3_FILE_OVERWRITE = True # So you can upload resumes with the same file name and overwrite your old one.
+AWS_S3_REGION_NAME = 'us-east-2'
+AWS_S3_HOST = 's3.us-east-2.amazonaws.com'
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'

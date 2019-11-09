@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY') if os.environ.get('SECRET_KEY') else '
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG") if os.environ.get("DEBUG") else True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', 'keebspace.com']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', 'keebspace.com', '127.0.0.1']
 
 
 ###################################################

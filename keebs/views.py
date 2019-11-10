@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse
 from django.views.generic import DetailView, TemplateView, ListView
 
 from .models import Build
+from users.models import CustomUser
 
 # Create your views here.
 
@@ -12,6 +13,8 @@ class HomeTemplateView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['latest_builds'] = Build.objects.all()[:5]
+        context['builds'] = Build.objects.all()
+        context['users'] = CustomUser.objects.all()[:5]
         return context
 
 class BuildListView(ListView):

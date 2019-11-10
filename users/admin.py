@@ -7,9 +7,11 @@ from .models import CustomUser
 
 # Register your models here.
 
+@admin.register(CustomUser)
 class CustomUserAdmin(UserAdmin):
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
     model = CustomUser
 
-admin.site.register(CustomUser, CustomUserAdmin)
+    fields = [f.name for f in CustomUser._meta.fields if f.name != 'id']
+    fieldsets = None

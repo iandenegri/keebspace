@@ -18,6 +18,8 @@ from django.urls import path, include
 
 from keebs.views import HomeTemplateView
 
+from users.models import CustomUser
+
 urlpatterns = [
     path('', HomeTemplateView.as_view(), name='index'),
     path('user/', include('users.urls', namespace='users')),

@@ -23,20 +23,18 @@
     <h1>Newest Builds</h1>
     <hr></hr>
 
-    {% for build in builds %}
+    {% for build in latest_builds %}
         {% if forloop.counter0|divisibleby:4 %}
             <div class="row pb-4">
         {% endif %}
         <div class="col-sm-3">
             <div class="card">
             <div class="card-header bg-warning">
-                Featured
+                <h5 class="card-title">{{ build.name }} - {{ build.owner.username }}</h5>
             </div>
             <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-                <img class="card-img-bottom" src="https://pypi.org/static/images/logo-small.6eef541e.svg" alt="Card image cap">
+                <p class="card-text">{{ build.description }}</p>
+                <img class="card-img-bottom" src="https://ae01.alicdn.com/kf/HTB1BZaeSVzqK1RjSZFoq6zfcXXaA.jpg" alt="Card image cap">
             </div>
             </div>
         </div>
@@ -44,9 +42,5 @@
             </div>
         {% endif %}
     {% endfor%}
-
-    {% for user in users %}
-    <h1>{{ user.username }}</h1>
-    {% endfor %}
 
 {% endblock content %}

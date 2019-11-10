@@ -12,9 +12,8 @@ class HomeTemplateView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['latest_builds'] = Build.objects.all()[:5]
-        context['builds'] = Build.objects.all()
-        context['users'] = CustomUser.objects.all()[:5]
+        context['latest_builds'] = Build.objects.all()[:12]
+        context['featured_builds'] = Build.objects.all()[:12]
         return context
 
 class BuildListView(ListView):

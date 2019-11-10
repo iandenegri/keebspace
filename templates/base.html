@@ -41,7 +41,11 @@
             </ul>  
         </div>
     </nav>
-    <div class="container">
+    <div class="hero">
+        {% block hero %}
+        {% endblock hero %}
+    </div>
+    <div class="container content">
         {% block content %}    
         {% endblock content %}
     </div>

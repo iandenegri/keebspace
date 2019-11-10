@@ -1,4 +1,7 @@
 {% extends "base.html" %}
 
+{% block content %}
 <p><strong>Name:</strong> {{ build.name }}</p>
 <p><strong>Description:</strong> {{ build.description }}</p>
+<p><strong>Owner:</strong> <a href="{% url 'users:user-detail' build.owner.pk %}">{{ build.owner.username }}</a></p>
+{% endblock content %}

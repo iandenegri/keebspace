@@ -23,6 +23,6 @@ from users.models import CustomUser
 urlpatterns = [
     path('', HomeTemplateView.as_view(), name='index'),
     path('user/', include('users.urls', namespace='users')),
-    path('build/', include('keebs.urls', namespace='keebs')),
+    path('builds/', include('keebs.urls', namespace='keebs')),
     path('admin/', admin.site.urls),
 ]

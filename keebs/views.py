@@ -12,7 +12,8 @@ class HomeTemplateView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['latest_builds'] = Build.objects.all()[:12]
+        context['latest_builds'] = Build.objects.all().order_by('-created_date')[0:12]
+        # Latest builds needs to use the publish date when that field is added...
         context['featured_builds'] = Build.objects.all()[:12]
         return context
 

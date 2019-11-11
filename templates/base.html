@@ -17,7 +17,7 @@
             <ul class="navbar-nav">
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'users:user-detail' request.user.id %}">Welcome {{ user.username }}</a>
+                    <a class="nav-link" href="{% url 'users:users-detail' request.user.id %}">Welcome {{ user.username }}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Dashboard</a>
@@ -27,7 +27,7 @@
                     <a class="nav-link" href="#">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Register</a>
+                    <a class="nav-link" href="{%url 'users:users-create' %}">Register</a>
                 </li>
                 {% endif %}
             </ul>  
